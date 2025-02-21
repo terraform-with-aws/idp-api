@@ -1,12 +1,14 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+dotenv.config(); 
 
 const MONGO_URI = process.env.MONGO_URI as string;
-console.log("MONGO_URI:", MONGO_URI);
 
 export const connectMongDB = async () => {
   try {
     await mongoose.connect(
-      "mongodb+srv://rajshriyanshu:raaaj159@idp-users.tmdi3.mongodb.net/?retryWrites=true&w=majority&appName=idp-users",
+      MONGO_URI,
       {} as mongoose.ConnectOptions
     );
 

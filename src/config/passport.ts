@@ -12,8 +12,7 @@ const opts: StrategyOptions = {
 passport.use(
   new JwtStrategy(opts, async (jwt_payload, done) => {
     try {
-      const user = { id: jwt_payload.id, email: jwt_payload.email } as Express.User; // Explicitly cast user
-      console.log("User", user);
+      const user = { id: jwt_payload.id, email: jwt_payload.email } as Express.User; 
       return done(null, user);
     } catch (error) {
       return done(error, false);

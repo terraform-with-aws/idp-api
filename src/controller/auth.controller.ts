@@ -2,7 +2,6 @@ import { NextFunction, Request, Response } from "express";
 import { User } from "../db/mongo-schema";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import { use } from "passport";
 
 export const signUp = async (
   req: Request,
